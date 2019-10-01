@@ -14,7 +14,7 @@ def clustered_all_points(clustering, dataset):
 
 
 @pytest.mark.parametrize('dataset', [
-    ("test_files/dataset_1.csv"),
+    ("tests/test_files/dataset_1.csv"),
 ])
 def test_kmeans_when_k_is_1(dataset):
     expected_clustering = kmeans.get_list_from_dataset_file(dataset)
@@ -30,9 +30,9 @@ def test_kmeans_when_k_is_1(dataset):
 
 
 @pytest.mark.parametrize('dataset,expected1,expected2', [
-    ("test_files/dataset_1.csv",
-     "test_files/dataset_1_k_is_2_0.csv",
-     "test_files/dataset_1_k_is_2_1.csv"),
+    ("tests/test_files/dataset_1.csv",
+     "tests/test_files/dataset_1_k_is_2_0.csv",
+     "tests/test_files/dataset_1_k_is_2_1.csv"),
 ])
 def test_kmeans_when_k_is_2(dataset, expected1, expected2):
     expected_clustering1 = kmeans.get_list_from_dataset_file(expected1)
@@ -57,10 +57,10 @@ def test_kmeans_when_k_is_2(dataset, expected1, expected2):
 
 
 @pytest.mark.parametrize('dataset,expected1,expected2,expected3', [
-    ("test_files/dataset_1.csv",
-     "test_files/dataset_1_k_is_3_0.csv",
-     "test_files/dataset_1_k_is_3_1.csv",
-     "test_files/dataset_1_k_is_3_2.csv"),
+    ("tests/test_files/dataset_1.csv",
+     "tests/test_files/dataset_1_k_is_3_0.csv",
+     "tests/test_files/dataset_1_k_is_3_1.csv",
+     "tests/test_files/dataset_1_k_is_3_2.csv"),
 ])
 def test_kmeans_when_k_is_3(dataset, expected1, expected2, expected3):
     expected_clustering1 = kmeans.get_list_from_dataset_file(expected1)
