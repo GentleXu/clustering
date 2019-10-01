@@ -56,7 +56,16 @@ def generate_k(data_set, k):
 
 
 def get_list_from_dataset_file(dataset_file):
-    raise NotImplementedError()
+    list =[]
+    with open(dataset_file) as file:
+        reader = csv.reader(file)
+        for point in reader:
+            pointdata = []
+            for cod in point:
+                pointdata.append(cod)
+            list.append(pointdata)
+    return list
+    # raise NotImplementedError()
 
 
 def cost_function(clustering):
