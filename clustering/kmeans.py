@@ -52,7 +52,8 @@ def generate_k(data_set, k):
     Given `data_set`, which is an array of arrays,
     return a random set of k points from the data_set
     """
-    raise NotImplementedError()
+    return random.sample(data_set, k)
+    # raise NotImplementedError()
 
 
 def get_list_from_dataset_file(dataset_file):
@@ -69,7 +70,14 @@ def get_list_from_dataset_file(dataset_file):
 
 
 def cost_function(clustering):
-    raise NotImplementedError()
+    cost = 0
+    for key in clustering.keys():
+        values = clustering[key]
+        center = point_avg(values)
+        for value in values:
+            cost += distance(center, value)
+    return cost
+    # raise NotImplementedError()
 
 
 def k_means(dataset_file, k):
